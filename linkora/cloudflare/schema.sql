@@ -1,0 +1,15 @@
+CREATE TABLE IF NOT EXISTS links (
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  slug TEXT NOT NULL UNIQUE,
+  destination TEXT NOT NULL,
+  created_at TEXT NOT NULL
+);
+
+CREATE TABLE IF NOT EXISTS clicks (
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  link_id INTEGER NOT NULL REFERENCES links(id) ON DELETE CASCADE,
+  clicked_at TEXT NOT NULL
+);
+
+CREATE INDEX IF NOT EXISTS clicks_link_id_idx ON clicks(link_id);
+CREATE INDEX IF NOT EXISTS clicks_clicked_at_idx ON clicks(clicked_at);
