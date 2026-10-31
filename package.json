@@ -1,0 +1,7 @@
+{
+  "name": "linkora",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Crea link brevi, QR code e statistiche di condivisione.",
+  "scripts": { "start": "node server.js" }
+}
